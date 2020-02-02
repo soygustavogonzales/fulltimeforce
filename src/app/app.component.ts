@@ -1,11 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http'
+import {SvcUsersService} from './services/svc-users.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  postId;
+  constructor(
+    private http:HttpClient,
+    private svcUsers: SvcUsersService
+    ){
+
+  }
+  ngOnInit(){
+    //console.log(this.svcUsers.GetAny())
+    /*
+    */ 
+
+   this.svcUsers.GetUsers()
+    .subscribe((res:any)=>{
+      console.log(res)
+    })
+ 
+
+  }
   title = 'myapp';
   searchText;
   users = [
