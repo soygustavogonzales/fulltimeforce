@@ -26,7 +26,7 @@ function App() {
   
   return (
     <div className="App">
-
+      <h1>Commits Log History of FullTimeForce Repository</h1>
       <VerticalTimeline>
         {
         commits.map((commit,key) => 
