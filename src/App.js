@@ -14,9 +14,9 @@ function App() {
 
     const getOct = async ()=> {
 
-      const data = await gitHubApi.getCommits();
-      console.log("data >>", data)
-      setCommits(data);
+      const response = await gitHubApi.getCommits();
+      console.log("data >>", response.data)
+      setCommits(response.data);
 
     };
     getOct()
