@@ -15,6 +15,7 @@ function App() {
     const getOct = async ()=> {
 
       const data = await gitHubApi.getCommits();
+      console.log("data >>", data)
       setCommits(data);
 
     };
@@ -26,6 +27,11 @@ function App() {
   
   return (
     <div className="App">
+      <pre>
+        {
+          commits
+        }
+      </pre>
       <h1>Commits Log History of FullTimeForce Repository</h1>
       <VerticalTimeline>
         {
